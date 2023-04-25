@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+<style>
+.azul {
+    background-color: #0a4b67;
+    color: white;
+}
+.verde-ca {
+    background-color: #C3F25E;
+}
+.verde {
+    background-color: #008617;
+    color: white;
+}
+.cinza {
+    background-color: #555;
+    color: black;
+}
+body {
+    font-family: "jaf-facitweb", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    color: #555;
+	background-color: #F9F9F9;
+	padding-top: 0px;
+}
+/**fab-site**/
+.area_menu{
+	position: fixed;
+    left: 0;
+    right: 20px;
+	bottom: 0;
+	overflow: visible;
+	height: 2px;
+	z-index: 1000;
+}
+
+.area_menu .wrap{
+	position: relative;
+}
+body.home .area_menu .wrap{
+	max-width: 500px;
+}
+.fab-site {
+    position: absolute;
+	bottom: 20px;
+	right: 0;
+    /*width: 200px;
+    height: 50px;
+    text-align: center;*/
+}
+.fab-site:hover,
+.fab-site:active{
+	box-shadow:  0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+}
+.fab-site a {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    line-height: 2.1em;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+.fab-site a:focus {
+    outline: none;
+}
+.fab-site a.main {
+    position: absolute;
+    width: 160px;
+    height: 35px;
+    border-radius: 30px;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    line-height: 2.5em;
+    padding-top: 5px;
+    color: #0a4b67;
+    font-weight: bold;
+    font-size: 11px;
+}
+.fab-site ul {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    padding-right: 5px;
+    margin: 0;
+    list-style: none;
+    z-index: 10;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+.fab-site ul li {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: -10%;
+    opacity: 0;
+    -webkit-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+.fab-site ul li label {
+    margin-right: 10px;
+    white-space: nowrap;
+    display: block;
+    margin-top: 10px;
+    padding: 5px 8px;
+    background-color: #333333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    border-radius: 16px;
+    height: 30px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 1;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+    color: white;
+    padding-top: 7px;
+}
+.fab-site.show a.main, .fab-site.show a.main {
+    outline: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .5);
+    color: #0a4b67;
+}
+.fab-site.show a.main + ul, .fab-site.show a.main + ul {
+    bottom: 70px;
+}
+.fab-site.show a.main + ul li,
+.fab-site.show a.main + ul li {
+    margin-bottom: 10px;
+    opacity: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.fab-site.show a.main + ul li:hover label, .fab-site.show a.main + ul li:hover label {
+    opacity: 1;
+}
+.my-icon {
+    float: left;
+    padding-left: 10px;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+        
+<body>
+    <img src="Topo CA.png" width="100%" id="topo">
+    <div style="background-color: #999; height: 200px;">Aqui é o banner da HOME</div><br>
+    <div style="height: 100px; color: #000" class="azul">
+        <a href="FaleCon.html" style="color: #C3F25E; padding: 10px; text-decoration: none;">Home</a>
+        <a href="FaleCon2.html?chat=true" style="color: #C3F25E; padding: 10px;">Fale Conosco</a>
+        <a href="?chat=true" style="color: #C3F25E; padding: 10px;">URL True</a>
+        <a href="?chat=false" style="color: #C3F25E; padding: 10px;">URL False</a>
+        <a href="#" onclick="openOmniChat();" style="color: #C3F25E; padding: 10px;">Abrir Chat</a></div>
+    <div style="height: 200px;" class="cinza">Mais content</div><br>
+    <div style="background-color: #A3D3D9; height: 200px;">Rodapé</div>
+    <div class="area_menu" id="menu">
+        <nav class="fab-site verde-ca">
+            <a class="main verde-ca">
+                <i style="font-size:24px" class="fa my-icon">&#xf232;</i>
+                <span>PRECISA DE AJUDA?</span>
+            </a>
+            <ul>
+                <li>
+                    <label for="Chat">Chat</label>
+                    <a class="cinza" id="Chat" href="FaleCon2.html?chat=true"> 
+                        <i class="fa fa-commenting-o"></i> 
+                    </a> </li>
+                <li>
+                    <label for="WhatsApp">WhatsApp</label>
+                    <a class="verde" id="WhatsApp" target="_blank" href="https://wa.me/5518996839441?text=Olá,%20CentralAr">
+                        <i style="font-size:24px" class="fa">&#xf232;</i>
+                    </a> </li>
+            </ul>
+        </nav> 
+    </div> 
+<script>
+// JavaScript Document
+function toggleFAB(fab) {
+    if (document.querySelector(fab).classList.contains('show')) {
+        document.querySelector(fab).classList.remove('show');
+        jQuery(fab).find(".fas").removeClass("fa-arrow-up");
+        jQuery(fab).find(".fas").addClass("fa-bars");
+
+    } else {
+        document.querySelector(fab).classList.add('show');
+        jQuery(fab).find(".fas").addClass("fa-arrow-up");
+        jQuery(fab).find(".fas").removeClass("fa-bars");
+    }
+}
+
+document.querySelector('.fab-site .main').addEventListener('click', function () {
+    toggleFAB('.fab-site');
+});
+
+document.querySelectorAll('.fab-site ul li a').forEach((item) => {
+    item.addEventListener('click', function () {
+        toggleFAB('.fab-site');
+    });
+});
+</script>  
+</body>
+</html>
